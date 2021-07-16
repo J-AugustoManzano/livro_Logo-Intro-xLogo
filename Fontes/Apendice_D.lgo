@@ -1,0 +1,369 @@
+aprenda retangulo1
+  PF  60
+  PD  90
+  PF 100
+  PD  90
+  PF  60
+  PD  90
+  PF 100
+  PD  90
+fim
+
+aprenda retangulo2
+  REPITA 2 [
+    PT  60
+    PE  90
+    PT 100
+    PE  90
+  ]
+fim
+
+aprenda pentagono
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+  PF  40
+  PD  72
+fim
+
+aprenda decagono
+  REPITA 10 [PF 30 PE 36]
+fim
+
+aprenda retameta :tamanho
+  REPITA 2 [
+    PF :TAMANHO PD 90
+    PF :TAMANHO / 2 PD 90
+  ]
+fim
+
+aprenda triangex
+  REPITA 3 [
+    PT 70 PE 120
+  ]
+fim
+
+aprenda flortrig
+  REPITA 4 [
+    TRIANGEX PD 90
+  ]
+fim
+
+aprenda ventitrig
+  REPITA 8 [
+    TRIANGEX PE 45
+  ]
+fim
+
+aprenda losango :tamanho
+  REPITA 2 [
+    PF :TAMANHO PD 125
+    PF :TAMANHO PD  55
+  ]
+  PE 55 PT :TAMANHO PD 55
+fim
+
+aprenda florlosa1
+  PD 120
+  REPITA 3 [
+    LOSANGO 80 PD 120
+  ]
+fim
+
+aprenda florlosa2
+  REPITA 4 [
+    LOSANGO 80 PE 90
+  ]
+fim
+
+aprenda florlosa3
+  REPITA 4 [
+    LOSANGO 80 PD 90
+  ]
+fim
+
+aprenda retangulo3
+  REPITA 2 [
+    PF 100
+    PD  90
+    PF  50
+    PD  90
+  ]
+fim
+
+aprenda catavento1
+  REPITA 4 [
+    RETANGULO3 PD 90
+  ]
+fim
+
+aprenda triangpr :tamanho
+  PARA [I 0 2] [
+    PF :TAMANHO PD 120
+  ]
+fim
+
+aprenda quadrado1 :tamanho
+  ATR "I 1
+  ENQUANTO [:I <= 4] [
+    PF :TAMANHO PD 90
+    ATR "I :I + 1
+  ]
+fim
+
+aprenda quadrado2 :tamanho
+  PARA [I 1 4] [
+    PF :TAMANHO PD 90
+  ]
+fim
+
+aprenda casinha
+  UL
+  PARA [I 1 4] [PF 80 PD  90]
+  PF 80 PD 90
+  PARA [I 1 2] [PF 80 PE 120]
+  PF  80    MUDEPOS [ 0 0]
+  PD 150 UN MUDEPOS [10 0]
+  UL
+  PF 60 PD  90
+  PF 20 PD  90
+  PF 60 PD 180
+  UN
+  MUDEPOS [50 60]
+  UL
+  PD 90
+  PARA [I 1 4] [PF 20 PD 90]
+  UN
+  MUDEPOS [0 0]
+  PE 90
+  UL
+fim
+
+aprenda catavento2
+  REPITA 8 [
+    RETANGULO3 PD 45
+  ]
+fim
+
+aprenda cap0501
+  LOCAL "N
+  LEIA [Entre valor para o cálculo:] "N 
+  MO (SN "Resultado "= POTÊNCIA INTEIRO :N 2)
+fim
+
+aprenda cap0502
+  LOCAL "N
+  LOCAL "R
+  LEIA [Entre valor para o cálculo:] "N
+  ATR "R POTÊNCIA INTEIRO :N 3
+  MO (SN "Resultado "= :R)
+fim
+
+aprenda cap0503
+  LOCAL "C
+  LOCAL "F
+  LEIA [Entre valor da temperatura em graus Celsius:] "C
+  ATR "F :C * 9 / 5 + 32
+  ESC (SN [Temperatura em Fahrenheit] "= :F)
+fim
+
+aprenda cap0504
+  LOCAL "F
+  LOCAL "C
+  LEIA [Entre valor da temperatura em graus Fahrenheit:] "F
+  ATR "C ((:F - 32) * 5) / 9
+  MO (SN [Temperatura em Celsius] "= :C)
+fim
+
+aprenda cap0505
+  LOCAL "A
+  LOCAL "B
+  LOCAL "R
+  LEIA [Entre valor o valor <A>:] "A 
+  LEIA [Entre valor o valor <B>:] "B 
+  ATR "R POTÊNCIA (INTEIRO :A - INTEIRO :B) 2
+  MO (SN [Quadrado da diferença] "= :R)
+fim
+
+aprenda cap0506
+  LOCAL "N
+  LOCAL "R
+  LEIA [Entre valor numérico inteiro:] "N 
+  ATR "R (INTEIRO :N) * 2
+  SE :R > 30 [
+    MO (SN "Resultado "= :R)
+  ]
+fim
+
+aprenda cap0507
+  LOCAL "A
+  LOCAL "B
+  LEIA [Entre valor numérico real <A>:] "A 
+  LEIA [Entre valor numérico real <B>:] "B 
+  SE :A > :B [
+    MO (SN "Resultado "= :A - :B)
+  ][
+    MO (SN "Resultado "= :B - :A)
+  ]
+fim
+
+aprenda cap0508
+  LOCAL "A
+  LOCAL "B
+  LOCAL "R
+  LEIA [Entre valor numérico real <A>:] "A 
+  LEIA [Entre valor numérico real <B>:] "B 
+  SE :A > :B [
+   ATR "R :A - :B
+  ][
+   ATR "R :B - :A
+  ]
+  MO (SN "Resultado "= :R)
+fim
+
+aprenda cap0509
+  LOCAL "A
+  LOCAL "B
+  LOCAL "C
+  LOCAL "R
+  LEIA [Entre valor numérico real <A>:] "A 
+  LEIA [Entre valor numérico real <B>:] "B 
+  LEIA [Entre valor numérico real <C>:] "C 
+  ATR "R INTEIRO :A + INTEIRO :B + INTEIRO :C
+  SE :R >= 100 [
+    MO (SN "Resultado "= :R)
+  ]
+fim
+
+aprenda cap0510
+  LOCAL "S
+  ATR "S 0
+  REPITA 100 [
+    ATR "S :S + CV
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0511
+  LOCAL "S
+  ATR "S 0
+  LOCAL "I
+  ATR "I 1
+  ENQUANTO [:I <= 100] [
+    ATR "S :S + :I
+    ATR "I :I + 1
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0513
+  LOCAL "S
+  ATR "S 0
+  REPITA 500 [
+    SE (RESTO CV 2) = 0 [
+      ATR "S :S + CV
+    ]
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0512
+  LOCAL "S
+  ATR "S 0
+  PARA [I 1 100] [
+    ATR "S :S + :I
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0514
+  LOCAL "S ATR "S 0
+  LOCAL "I ATR "I 1
+  ENQUANTO [:I <= 500] [
+    SE (RESTO :I 2) = 0 [
+      ATR "S :S + :I
+    ]
+    ATR "I :I + 1
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0515
+  LOCAL "S ATR "S 0
+  PARA [I 1 500] [
+    SE (RESTO :I 2) = 0 [
+      ATR "S :S + :I
+    ]
+  ]
+  MO (SN "Somatório: "= :S)
+fim
+
+aprenda cap0516
+  REPITA 19 [
+    SE (RESTO CV 4) = 0 [
+      MO CV
+    ]
+  ]
+fim
+
+aprenda cap0517
+  LOCAL "I ATR "I 1
+  ENQUANTO [:I <= 19] [
+    SE (RESTO :I 4) = 0 [
+      MO :I
+    ]
+    ATR "I :I + 1
+  ]
+fim
+
+aprenda cap0518
+  PARA [I 1 19] [
+    SE (RESTO :I 4) = 0 [
+      MO :I
+    ]
+  ]
+fim
+
+aprenda cap0519
+  LOCAL "I
+  ATR "I 0
+  REPITA 5 [
+    MO :I
+    ATR "I :I + 1
+  ]
+fim
+
+aprenda cap0520
+  LOCAL "I
+  ATR "I 0
+  ENQUANTO [:I <= 4] [
+    MO :I
+    ATR "I :I + 1
+  ]
+fim
+
+aprenda cap0521
+  PARA [I 0 4] [
+    MO :I
+  ]
+fim
+
+aprenda cap0523
+  LOCAL "I
+  ATR "I 0
+  ENQUANTO [:I <= 15] [
+    MO :I
+    ATR "I :I + 3
+  ]
+fim
+
+aprenda cap0524
+  PARA [I 0 15 3] [
+    MO :I
+  ]
+fim

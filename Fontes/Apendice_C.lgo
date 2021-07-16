@@ -1,0 +1,17 @@
+aprenda draw_spin
+  LD AT 
+  MUDECF [000 000 000] # PRETO
+  PARA [X 0 199] [
+    SE (RESTO :X 6) = 0 [MUDECL [255 000 000]] # 0 - VERMELHO
+    SE (RESTO :X 6) = 1 [MUDECL [128 000 128]] # 1 - ROXO
+    SE (RESTO :X 6) = 2 [MUDECL [000 000 255]] # 2 - AZUL
+    SE (RESTO :X 6) = 3 [MUDECL [000 128 000]] # 3 - VERD
+    SE (RESTO :X 6) = 4 [MUDECL [255 255 000]] # 4 - AMARELO
+    SE (RESTO :X 6) = 5 [MUDECL [255 165 000]] # 5 - LARANJA
+    MUDEESPESSURADOLÁPIS (:X / 100) + 1
+    PF :X
+    PE 59
+  ]
+  DT
+  MUDEEL 0
+fim

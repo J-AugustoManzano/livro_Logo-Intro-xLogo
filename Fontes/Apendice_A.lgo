@@ -1,0 +1,191 @@
+aprenda figuras :lados :tamanho
+  REPITA :LADOS [PF :TAMANHO PD 360 / :LADOS]
+fim
+
+aprenda segmento
+  PF 20 PE 90
+  PF 50 PE 90
+  PF 10 PE 90
+  PF 55
+  PF 55 PD 90
+  PF 10 PD 90
+  PF 50 PD 90
+  PF 20 
+fim
+
+aprenda padrao
+  PD 62
+  REPITA 10 [ SEGMENTO ]
+fim
+
+aprenda caminho
+  REPITA 22 [
+    PD 90
+    PF 110 - CV * 10
+    PD 90
+    PF CV * 10
+  ]
+fim
+
+aprenda hexaflor :petalas
+  REPITA :PETALAS [
+    FIGURAS 5 50
+    PD 360 / :PETALAS
+  ]
+fim
+
+aprenda ciclo :indice :ultimo
+  MUDEXY :INDICE              0
+  MUDEXY :ULTIMO              :INDICE
+  MUDEXY (:ULTIMO - :INDICE)  :ULTIMO
+  MUDEXY 0                    (:ULTIMO - :INDICE)
+  MUDEXY :INDICE              0
+fim
+
+aprenda quadart
+  REPITA 10 [CICLO CV * 10 100]
+fim
+
+aprenda estrelando :tamanho :limite
+    SE :TAMANHO < :LIMITE [PARE]
+    REPITA 5 [PF :TAMANHO ESTRELANDO 
+                 :TAMANHO * .3 :LIMITE PD 144]
+fim
+
+aprenda bandeira
+  PF 50
+  FIGURAS 4 50
+fim
+
+aprenda cruz
+  REPITA 4 [BANDEIRA PD 90]
+fim
+
+aprenda voltabanda
+  BANDEIRA
+  PT 50
+fim
+
+aprenda bandeiras
+  REPITA 4 [VOLTABANDA PD 90]
+fim
+
+aprenda muitasbandeiras
+  BANDEIRAS
+  PD 45
+  BANDEIRAS
+fim
+
+aprenda quadrados
+  FIGURAS 4 20
+  FIGURAS 4 35
+  FIGURAS 4 50
+  FIGURAS 4 65
+fim
+
+aprenda diamantes
+  PD 45
+  REPITA 4 [QUADRADOS PD 90]
+fim
+
+aprenda quadrado
+  REPITA 4 [FIGURAS 4 100]
+fim
+
+aprenda florquadrada
+  REPITA 18 [QUADRADO PD 20]
+fim
+
+aprenda bandtri
+  PF 100 PD 120
+  PF  30 PD 120
+  PF  30 PD 120
+  PT 70 
+fim
+
+aprenda florbandtri
+  REPITA 20 [BANDTRI ESPERE 30 PD 18]
+fim
+
+aprenda quadriculado :valor
+  SE (:VALOR < 3) [
+    PARE
+  ]
+  REPITA 4 [
+    QUADRICULADO :VALOR / 3
+    PF :VALOR
+    PD 90
+  ]
+fim
+
+aprenda tuneltri :tamanho :angulo
+  SE (:TAMANHO > 200) [
+    PARE
+  ]
+  PF :TAMANHO
+  PD :ANGULO
+  TUNELTRI :TAMANHO + 5 :ANGULO + 0.12
+fim
+
+aprenda pa
+  REPITA 2 [PF 100 PD 135 PF 20 PD 45]
+fim
+
+aprenda helice
+  REPITA 8 [PA PD 135 PF 20]
+fim
+
+aprenda espiraltri :lado
+  SE (:LADO > 350) [
+    PARE
+  ] 
+  PF :LADO ESPERE 20 
+  PD 120 ESPERE 20
+  ESPIRALTRI :LADO + 10 ESPERE 30
+fim
+
+aprenda espiralquad :lado
+  SE (:LADO > 350) [
+    PARE
+  ] 
+  PF :LADO ESPERE 20
+  PD 90 ESPERE 20
+  ESPIRALQUAD :LADO + 10 ESPERE 30
+  PD 90 ESPERE 50
+fim
+
+aprenda forma
+  PF 100 PD 135
+  PF  40 PD 120
+  PF  60 PD  15
+fim
+
+aprenda formatri
+  PF 50 PD 150
+  PF 60 PD 100
+  PF 30 PD  90
+fim
+
+aprenda arvore :tamanho
+  SE :TAMANHO < 5 [PF :TAMANHO PT :TAMANHO PARE]
+  PF :TAMANHO / 3
+  PE 30 
+  ARVORE :TAMANHO * 2 / 3
+  PD 30
+  PF :TAMANHO / 6
+  PD 25
+  ARVORE :TAMANHO / 2
+  PE 25
+  PF :TAMANHO / 3
+  PD 25
+  ARVORE :TAMANHO / 2
+  PE 25
+  PF :TAMANHO / 6
+  PT :TAMANHO  
+fim
+
+aprenda curvac :tamanho :nivel
+  SE :NIVEL = 0 [PF :TAMANHO PARE]
+  CURVAC :TAMANHO :NIVEL - 1 PD 90
+  CURVAC :TAMANHO :NIVEL - 1 PE 90
+fim

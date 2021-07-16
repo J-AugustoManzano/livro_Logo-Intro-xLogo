@@ -1,0 +1,106 @@
+aprenda quad1
+  REPITA 4 [PF 80 PD 90]
+fim
+
+aprenda penta1
+  REPITA 5 [PF 50 PD 360 / 5]
+fim
+
+aprenda meiocirc
+  REPITA 90 [PF 1 PD 1]
+fim
+
+aprenda petala
+  MEIOCIRC
+  PD 90
+  MEIOCIRC
+fim
+
+aprenda flor
+  LD
+  REPITA 8 [PETALA PD 45]
+fim
+
+aprenda quad2 :tamanho
+  REPITA 4 [PF :TAMANHO PD 90]
+fim
+
+aprenda polis :tamanho :lado
+  REPITA :LADO [PF :TAMANHO PD 360 / :LADO]
+fim
+
+aprenda maximo :a :b
+  SE :A > :B [ESC :A] [ESC :B]
+  ESC "\n
+fim
+
+aprenda par :n
+  SE (RESTO :N 2) = 0 [ESCREVA [Ok]] [ESCREVA [Erro]]
+  ESC "\n
+fim
+
+aprenda impar :n
+  SE NÃO (RESTO :N 2) = 0 [ESCREVA [Ok]]
+  ESC "\n
+fim
+
+aprenda floral :n
+  SE OU :N < 1 :N > 7 [
+    ESCREVA [Use valores entre 1 e 7]
+  ][
+    REPITA 8 [
+      PD 45 
+      REPITA :N [
+        REPITA 90 [
+          PF 2 
+          PD 2
+        ] 
+        PD 90
+      ]
+    ]
+  ]
+fim
+
+aprenda teste_e :n
+  SE E :N >= 1 :N <= 9 [
+    ESC [Valor está na faixa de 1 a 9.\n]
+  ][
+    ESC [Valor não está na faixa de 1 a 9.\n]
+  ]
+fim
+
+aprenda teste_ou :tempo
+  SE OU :TEMPO = "FRIO :TEMPO = "CHUVOSO [
+    ESC [Tempo ruim, proteja-se.\n]
+  ][
+    ESC [Tempo bom, aproveite.\n]
+  ]
+fim
+
+aprenda teste_nao :v
+  SE NÃO :V > 5 [
+    ESC PALAVRA (POTÊNCIA :V 2) "\n
+  ]
+fim
+
+aprenda espiral :tamanho :angulo :numero
+  SE :NUMERO = 0 [
+    PARE
+  ]
+  PF :TAMANHO
+  PD :ANGULO
+  ESPIRAL (:TAMANHO + 8) :ANGULO (:NUMERO - 1)
+fim
+
+aprenda triangular
+  PF 40 PD 135 
+  PF 40 / RAIZQ 2 PD 90 
+  PF 40 / RAIZQ 2 PD 135
+fim
+
+aprenda trelica :x
+  SE :X = 0 [PARE]
+  REPITA 4 [TRIANGULAR PF 40 PD 90]
+  PD 90 PF 40 PE 90
+  TRELICA :X - 1
+fim
